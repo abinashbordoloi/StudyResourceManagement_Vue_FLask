@@ -3,7 +3,7 @@ from application.models import db
 from config import DevelopmentConfig
 def create_app():
 
-    app = Flask(cl__name__)
+    app = Flask(__name__)
     app.config.from_object(DevelopmentConfig)
 
     db.init_app(app)
