@@ -12,7 +12,7 @@ class User(db.Model):
     # tasks = db.relationship('Task', backref = 'user', lazy = True)
     role_id = db.Column(db.String, db.ForeignKey('role.id'))
     role = db.relationship('Role')
-    study_resource = db.relationship('StudyResourcre', backref = 'creator')
+    study_resource = db.relationship('StudyResource', backref = 'creator')
     
 
 
