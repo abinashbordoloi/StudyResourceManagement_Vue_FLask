@@ -12,21 +12,21 @@ class User(db.Model):
     # tasks = db.relationship('Task', backref = 'user', lazy = True)
     role_id = db.Column(db.String, db.ForeignKey('role.id'))
     role = db.relationship('Role')
-    study_resource = db.relationship('StudyResource', backref = 'creator')
+    # study_resource = db.relationship('StudyResource', backref = 'creator')
     
 
 
 class Role(db.Model):
     id = db.Column(db.String, primary_key = True)
     name = db.Column(db.String(80), unique = True)
-    decription = db.Column(db.String(225))
+    description = db.Column(db.String(225))
 
 
 class StudyResource(db.Model):
     id = db.Column(db.Integer, primary_key = True)
     topic = db.Column(db.String, nullable = True)
     description = db.Column(db.String,nullable = False)
-    creator_id = db.Column(db.Integer, db.ForeignKey('user.id'), nullable = False)
+    # creator_id = db.Column(db.Integer, db.ForeignKey('user.id'), nullable = False)
     resource_link = db.Column(db.String, nullable = False)
     is_approved = db.Column(db.Boolean(), default = False )
 
